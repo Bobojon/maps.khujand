@@ -21,12 +21,12 @@
             geocoder.geocode({'address' : "Худжанд 34 мкр"},function(results, status){
                 if(status == google.maps.GeocoderStatus.OK){
                     var position = {
-                        b: results[0].geometry.location.lat(),
-                        k: results[0].geometry.location.lng()
+                        lat: results[0].geometry.location.lat(),
+                        lng: results[0].geometry.location.lng()
                     };
                     var mapOptions = {
                         zoom: 12,
-                        center: new google.maps.LatLng(position.b, position.k)
+                        center: new google.maps.LatLng(position.lat, position.lng)
                     };
                     map = new google.maps.Map(document.getElementById('map-canvas'),
                         mapOptions);
